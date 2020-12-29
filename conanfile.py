@@ -13,9 +13,9 @@ class CoroConanfile(conans.ConanFile):
         if (
             self.settings.os != "Linux"
             or self.settings.arch != "x86_64"
-            or self.settings.compiler != "clang"
-            or self.settings.compiler.version != 11
-            or self.settings.compiler.libcxx != "libc++"
+            or self.settings.compiler != "gcc"
+            or self.settings.compiler.version != 10
+            or self.settings.compiler.libcxx != "libstdc++11"
         ):
             raise conans.errors.ConanInvalidConfiguration("This recipe is not tested in the configuration you requested")
 

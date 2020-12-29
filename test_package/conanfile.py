@@ -7,8 +7,6 @@ class CoroConanTestPackage(conans.ConanFile):
     def build(self):
         cmake = conans.CMake(self)
 
-        cmake.definitions["CMAKE_CXX_FLAGS_INIT"] = f"-stdlib=libc++"
-
         cmake.configure()
 
         cmake.build()
